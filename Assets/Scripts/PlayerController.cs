@@ -25,6 +25,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Translate(movement * moveSpeed * Time.fixedDeltaTime);
+        transform.Translate(movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 }
