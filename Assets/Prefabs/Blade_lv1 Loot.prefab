@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3267393451003839448}
   - component: {fileID: 7406461189223319335}
   - component: {fileID: 8328885973904360754}
+  - component: {fileID: -8705813882190219318}
   m_Layer: 0
   m_Name: Blade_lv1 Loot
   m_TagString: LootBlade
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 447115791
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5161668012596705423, guid: d928ca2cd650deb47ac4d5934861e236, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -89,7 +90,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &3267393451003839448
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 0.59, y: 2.42}
     newSize: {x: 0.59, y: 2.42}
     adaptiveTilingThreshold: 0.5
@@ -175,3 +176,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e8c1711ef1a9c439f42ea32caf6112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordLevel: 0
+--- !u!210 &-8705813882190219318
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400444030177783596}
+  m_Enabled: 1
+  m_SortingLayerID: 447115791
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

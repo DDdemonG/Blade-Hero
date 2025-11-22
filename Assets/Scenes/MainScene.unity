@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.5
-  rotateSpeed: 300
+  rotateSpeed: 100
   pointOutward: 1
 --- !u!1 &168121340
 GameObject:
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000af674217
+  m_ApplyToSortingLayers: 00000000af6742170f72a61ac766be98a74f8a39
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1942,8 +1942,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1732352313
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 9128384846270689552, guid: 488c3e43e36186f49a026c579a3180f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1976,8 +1976,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985465040}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1732352313
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!114 &1985465049
@@ -2001,8 +2001,6 @@ MonoBehaviour:
   - {fileID: 7556474091422524003, guid: 430fe40e52ea1434686ea9113479b643, type: 3}
   - {fileID: 730086881670365761, guid: aba9c6510e0b37e45b8eda8eabede52e, type: 3}
   - {fileID: 4693854243054397104, guid: ca157add30c371f44b7ac8b43fae1f97, type: 3}
-  currentLevel: 0
-  swordLevel: 0
 --- !u!1001 &1986534478
 PrefabInstance:
   m_ObjectHideFlags: 0

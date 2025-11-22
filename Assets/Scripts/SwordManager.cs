@@ -1,57 +1,62 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class SwordManager : MonoBehaviour
 {
-    public Transform swordHolder;  
-    public int mergeCount = 6;      
+    public Transform swordHolder; 
+    public int mergeCount = 6; 
 
-    public GameObject[] swordPrefabs;
+    public GameObject[] swordPrefabs; 
 
-    private List<GameObject> currentSwords = new List<GameObject>();
-    public int currentLevel = 0;
+    private List<GameObject>[] storedSwords;
 
-    public int swordLevel = 0;
-
-    public void AddSword(int levelToAdd)
+    void Start()
     {
-        if (levelToAdd != currentLevel)
+        int maxLevel = swordPrefabs.Length;
+        storedSwords = new List<GameObject>[maxLevel];
+
+        for (int i = 0; i < maxLevel; i++)
         {
-            Debug.Log("Pas le même level");
+            storedSwords[i] = new List<GameObject>();
+        }
+    }
+
+    public void AddSword(int level)
+    {
+        if (level >= swordPrefabs.Length)
+        {
+            Debug.Log("LEVEL MAX!");
             return;
         }
 
-        GameObject newSword = Instantiate(swordPrefabs[currentLevel]);
-
+        GameObject newSword = Instantiate(swordPrefabs[level]);
         newSword.transform.SetParent(swordHolder);
         newSword.transform.localPosition = Vector3.zero;
         newSword.transform.localRotation = Quaternion.identity;
 
-        currentSwords.Add(newSword);
+        storedSwords[level].Add(newSword);
+        Debug.Log($"Get Lv{level + 1} Blade. Count total of same level: {storedSwords[level].Count}");
 
-        CheckMerge();
+        CheckMerge(level);
     }
 
-    void CheckMerge()
+    void CheckMerge(int level)
     {
-        if (currentLevel >= swordPrefabs.Length - 1)
-        {
-            return;
-        }
+        if (level >= swordPrefabs.Length - 1) return;
 
-        if (currentSwords.Count >= mergeCount)
+        List<GameObject> currentPool = storedSwords[level];
+
+        if (currentPool.Count >= mergeCount)
         {
-            foreach (var sword in currentSwords)
+            Debug.Log($"Lv{level + 1} got {mergeCount} blades, MERGE!");
+
+            for (int i = 0; i < mergeCount; i++)
             {
-                Destroy(sword);
+                GameObject swordToRemove = currentPool[0];
+                currentPool.RemoveAt(0); 
+                Destroy(swordToRemove);
             }
-            currentSwords.Clear();
-
-            currentLevel++;
-
-            AddSword(currentLevel);
-
-            Debug.Log("LEVEL UP TO" + (currentLevel + 1));
+            AddSword(level + 1);
         }
     }
 }

@@ -12,7 +12,7 @@ public class PickupItem : MonoBehaviour
 
             SwordManager manager = other.GetComponent<SwordManager>();
 
-            if (manager != null && manager.currentLevel == swordLevel)
+            if (manager != null)
             {
                 manager.AddSword(swordLevel);
 

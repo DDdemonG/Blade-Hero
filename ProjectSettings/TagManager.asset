@@ -47,5 +47,14 @@ TagManager:
   - name: Land
     uniqueID: 390227887
     locked: 0
+  - name: Loot
+    uniqueID: 447115791
+    locked: 0
+  - name: Characters
+    uniqueID: 2562614983
+    locked: 0
+  - name: Weapons
+    uniqueID: 965365671
+    locked: 0
   m_RenderingLayers:
   - Default
