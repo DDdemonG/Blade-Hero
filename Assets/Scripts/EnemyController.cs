@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public GameObject player;
+    public Transform player;
     public float moveSpeed = 2f;
     public float attackDistance = 0.7f;
     public float knockbackForce = 4f;
@@ -29,6 +29,16 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         currentHP = maxHP;
+
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+        if (p != null)
+        {
+            player = p.transform;
+        }
+        else
+        {
+            Debug.LogError("aucun joueur trouvé!");
+        }
     }
 
     void Update()
@@ -37,7 +47,9 @@ public class EnemyController : MonoBehaviour
         if (isHurt) return;
         if (isAttacking) return;
 
-        float dist = Vector2.Distance(transform.position, player.transform.position);
+        if (player == null) return;
+
+        float dist = Vector2.Distance(transform.position, player.position);
 
         if (dist <= attackDistance)
         {
@@ -56,7 +68,7 @@ public class EnemyController : MonoBehaviour
 
     void MoveTowardPlayer()
     {
-        Vector2 dir = (player.transform.position - transform.position).normalized;
+        Vector2 dir = (player.position - transform.position).normalized;
         rb.linearVelocity = dir * moveSpeed;
 
         animator.SetFloat("Speed", 1);
@@ -73,7 +85,7 @@ public class EnemyController : MonoBehaviour
         isAttacking = true;
         animator.SetBool("IsAttacking", true);
 
-        animator.SetInteger("AttackIndex", Random.Range(1,2));
+        animator.SetInteger("AttackIndex", Random.Range(1, 3));
     }
 
     public void EndAttack()
