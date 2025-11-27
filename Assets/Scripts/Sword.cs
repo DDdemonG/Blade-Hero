@@ -7,45 +7,51 @@ public class Sword : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (gameObject.CompareTag("PlayerBlade")) { 
         Sword otherSword = other.GetComponent<Sword>();
-        if (otherSword != null)
-        {
-            if (!gameObject.activeInHierarchy || !otherSword.gameObject.activeInHierarchy)
+            if (otherSword != null)
+            {
+                if (!gameObject.activeInHierarchy || !otherSword.gameObject.activeInHierarchy)
+                    return;
+
+                if (level > otherSword.level)
+                {
+                    Debug.Log("");
+                    Destroy(otherSword.gameObject);
+                }
+                else if (level < otherSword.level)
+                {
+                    Debug.Log("");
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Debug.Log("");
+                    Destroy(otherSword.gameObject);
+                    Destroy(gameObject);
+                }
+
                 return;
-
-            if (level > otherSword.level)
-            {
-                Debug.Log("");
-                Destroy(otherSword.gameObject);
             }
-            else if (level < otherSword.level)
-            {
-                Debug.Log("");
-                Destroy(gameObject);
-            }
-            else
-            {
-                Debug.Log("");
-                Destroy(otherSword.gameObject);
-                Destroy(gameObject);
-            }
-
-            return;
         }
-        EnemyController enemy =
-            other.GetComponent<EnemyController>() ??
-            other.GetComponentInParent<EnemyController>();
 
-        if (enemy != null)
-        {
-           
+        if (gameObject.CompareTag("PlayerBlade") ) {
+            EnemyController enemy =
+                other.GetComponent<EnemyController>() ??
+                other.GetComponentInParent<EnemyController>();
 
-            int damage = level * 10;   
-            Debug.Log("damage take" + damage);
+            if (enemy != null)
+            {
 
-            enemy.TakeDamage(damage);
-            return;
+
+                int damage = level * 10;
+                Debug.Log("damage take" + damage);
+
+                enemy.TakeDamage(damage);
+                return;
+            }
+            Debug.Log("hit something not enemy or blade" + other.name);
         }
-        Debug.Log("hit something not enemy or blade" + other.name);
+        }
     }
-}
+
