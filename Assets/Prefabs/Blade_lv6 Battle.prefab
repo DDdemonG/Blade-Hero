@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7324476581806242950}
   - component: {fileID: 8278208642071824042}
   - component: {fileID: 2596869454440458569}
+  - component: {fileID: -3260565018861798049}
   m_Layer: 0
   m_Name: Blade_lv6 Battle
   m_TagString: PlayerBlade
@@ -143,7 +144,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4693854243054397104}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -162,3 +163,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3260565018861798049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4693854243054397104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a86e9c7529c53f4680f28e7a4efa8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 6
