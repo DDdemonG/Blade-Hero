@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("aucun joueur trouvé!");
+            Debug.LogError("aucun joueur trouv?");
         }
     }
 
@@ -94,11 +94,17 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("IsAttacking", false);
     }
 
-    public void TakeDamage(int damage, Vector2 hitDirection)
+    public void TakeDamage(int damage)
     {
+       
         if (isDead) return;
 
+        Vector2 hitDirection = gameObject.transform.position - player.position;
+
+
         currentHP -= damage;
+        Debug.Log("Enemy TakeDamage: -" + damage + " | HP left = " + currentHP);
+
 
         isHurt = true;
         animator.SetBool("IsHurt", true);
@@ -119,7 +125,9 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
+        if (isDead) return;
         isDead = true;
+        Debug.Log("Enemy Died!");
         animator.SetBool("IsDead", true);
         rb.linearVelocity = Vector2.zero;
     }
