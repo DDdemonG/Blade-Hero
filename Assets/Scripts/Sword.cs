@@ -5,10 +5,17 @@ public class Sword : MonoBehaviour
 {
     public int level = 0;
 
+    private PlayerHealth playerHP;
+
+    private void Awake()
+    {
+        playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (gameObject.CompareTag("PlayerBlade")) { 
-        Sword otherSword = other.GetComponent<Sword>();
+            Sword otherSword = other.GetComponent<Sword>();
             if (otherSword != null)
             {
                 if (!gameObject.activeInHierarchy || !otherSword.gameObject.activeInHierarchy)
@@ -51,6 +58,14 @@ public class Sword : MonoBehaviour
 
                 enemy.TakeDamage(damage);
                 return;
+            }
+        }
+
+        if (gameObject.CompareTag("EnemyBlade") && other.gameObject.CompareTag("Player"))
+        {
+            if (playerHP != null)
+            {
+                playerHP.TakeDamage(level*10);
             }
         }
     }
