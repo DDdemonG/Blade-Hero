@@ -14,6 +14,11 @@ public class Sword : MonoBehaviour
                 if (!gameObject.activeInHierarchy || !otherSword.gameObject.activeInHierarchy)
                     return;
 
+                if (other.CompareTag("PlayerBlade"))
+                {
+                    return;
+                }
+
                 if (level > otherSword.level)
                 {
                     Debug.Log("");
@@ -52,6 +57,6 @@ public class Sword : MonoBehaviour
             }
             Debug.Log("hit something not enemy or blade" + other.name);
         }
-        }
     }
+}
 
