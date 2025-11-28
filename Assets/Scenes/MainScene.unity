@@ -2063,6 +2063,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2853979860748154770, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853979860748154770, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853979860748154770, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5220792891841913351, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2101,6 +2113,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5220792891841913351, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712715620121935705, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6643041635363209349, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
