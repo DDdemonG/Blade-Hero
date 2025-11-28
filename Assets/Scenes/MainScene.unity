@@ -1896,6 +1896,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: 0.43899938
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: -0.20801127
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: 0.4859164
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: -0.021627001
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: 0.4407693
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: 0.13182442
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].x
+      value: -0.054322373
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
+      value: -0.3470758
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[10].x
+      value: 0.17962027
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[10].y
+      value: -0.34250396
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[11].x
+      value: 0.3536859
+      objectReference: {fileID: 0}
+    - target: {fileID: 521785523580724650, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[11].y
+      value: -0.26880825
+      objectReference: {fileID: 0}
     - target: {fileID: 2237130101868526339, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
       propertyPath: m_LinearDamping
       value: 5
@@ -1945,7 +1993,8 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 290832752143844173, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d18d232fcd2f6498781db24ae65c65, type: 3}

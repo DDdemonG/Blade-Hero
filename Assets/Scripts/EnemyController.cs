@@ -19,11 +19,16 @@ public class EnemyController : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public int attackDamage = 10;
+
+    private PlayerHealth playerHP;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        playerHP = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     void Start()
@@ -75,6 +80,8 @@ public class EnemyController : MonoBehaviour
 
     void StartAttack()
     {
+        if (!player.gameObject.activeInHierarchy) return;
+
         rb.linearVelocity = Vector2.zero;
         animator.SetFloat("Speed", 0);
 
@@ -134,5 +141,33 @@ public class EnemyController : MonoBehaviour
     public void OnDeathEnd()
     {
         Destroy(gameObject);
+    }
+
+    public void MeleeAttackHit()
+    {
+        if (!player.gameObject.activeInHierarchy || isDead) return;
+
+        float dist = Vector2.Distance(transform.position, player.position);
+        if (dist > attackDistance + 0.5f) return;
+
+        Vector2 dirToPlayer = (player.position - transform.position).normalized;
+
+        bool isFacingLeft = sprite.flipX;
+
+        if (isFacingLeft && dirToPlayer.x > 0) return;
+
+        if (!isFacingLeft && dirToPlayer.x < 0) return;
+
+        Debug.Log("Hit Player!");
+        
+        if (playerHP != null)
+        {
+            playerHP.TakeDamage(attackDamage);
+        }
+        else
+        {
+            Debug.LogWarning("aucun PlayerHealth");
+        }
+        
     }
 }
