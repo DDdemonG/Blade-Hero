@@ -58,16 +58,12 @@ public class EnemyController : MonoBehaviour
         }
 
         MoveTowardPlayer();
-
-        if (isAttacking || isHurt || isDead)
-        {
-            rb.linearVelocity = Vector2.zero;
-            return;
-        }
     }
 
     void MoveTowardPlayer()
     {
+        if (isHurt || isDead || isDead) return;
+
         Vector2 dir = (player.position - transform.position).normalized;
         rb.linearVelocity = dir * moveSpeed;
 
@@ -96,25 +92,28 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-       
-        if (isDead) return;
-
-        Vector2 hitDirection = gameObject.transform.position - player.position;
-
+        if (isDead || isHurt) return;
 
         currentHP -= damage;
         Debug.Log("Enemy TakeDamage: -" + damage + " | HP left = " + currentHP);
 
-
-        isHurt = true;
-        animator.SetBool("IsHurt", true);
-
-        rb.linearVelocity = hitDirection.normalized * knockbackForce;
-
         if (currentHP <= 0)
         {
             Die();
+            KnockBack();
         }
+        else
+        {
+            isHurt = true;
+            animator.SetBool("IsHurt", true);
+            KnockBack();
+        }
+    }
+
+    public void KnockBack()
+    {
+        Vector2 hitDirection = gameObject.transform.position - player.position;
+        rb.linearVelocity = hitDirection.normalized * knockbackForce;
     }
 
     public void EndHurt()

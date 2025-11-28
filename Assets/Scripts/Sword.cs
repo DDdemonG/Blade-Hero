@@ -47,15 +47,11 @@ public class Sword : MonoBehaviour
 
             if (enemy != null)
             {
-
-
                 int damage = level * 10;
-                Debug.Log("damage take" + damage);
 
                 enemy.TakeDamage(damage);
                 return;
             }
-            Debug.Log("hit something not enemy or blade" + other.name);
         }
     }
 }
