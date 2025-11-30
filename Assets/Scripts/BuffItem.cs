@@ -16,13 +16,23 @@ public class BuffItem : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip sound;
 
+    public float pickupDelay = 0.5f;
+    private float spawnTime;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
+    void Start()
+    {
+        spawnTime = Time.time;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (Time.time < spawnTime + pickupDelay) return;
+
         if (other.CompareTag("Player"))
         {
             PlayerBuffs player = other.GetComponent<PlayerBuffs>();
