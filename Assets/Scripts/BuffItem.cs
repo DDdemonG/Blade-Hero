@@ -45,6 +45,12 @@ public class BuffItem : MonoBehaviour
         }
     }
 
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (Time.time < spawnTime + pickupDelay) return;
+        OnTriggerEnter2D(other);
+    }
+
     void PlayAndDestroy(GameObject effect)
     {
         if (audioSource != null && sound != null)

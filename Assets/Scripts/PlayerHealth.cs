@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using static Codice.CM.Common.CmCallContext;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -15,12 +14,17 @@ public class PlayerHealth : MonoBehaviour
 
     private bool isInvincible = false;
     private SpriteRenderer spriteRenderer;
+    public GameObject shield;
 
-    void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if (shield != null) shield.SetActive(false);
+    }
 
+    void Start()
+    {
         if (hitParticle != null)
         {
             hitParticle.Stop();
@@ -34,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
         if (hasShield)
         {
             hasShield = false;
+            shield.SetActive(hasShield);
             Debug.Log("Defended once");
             StartCoroutine(InvincibilityRoutine());
             return; 
@@ -93,6 +98,7 @@ public class PlayerHealth : MonoBehaviour
     public void AddShield()
     {
         hasShield = true;
+        shield.SetActive(hasShield);
         Debug.Log("Get Shield!");
     }
 }

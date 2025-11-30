@@ -29,4 +29,10 @@ public class PickupItem : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (Time.time < spawnTime + pickupDelay) return;
+        OnTriggerEnter2D(other);
+    }
 }
