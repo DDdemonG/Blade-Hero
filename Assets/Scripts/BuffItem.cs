@@ -13,6 +13,13 @@ public class BuffItem : MonoBehaviour
     public BuffType type;
     public float amount;
     public float duration;
+    private AudioSource audioSource;
+    public AudioClip sound;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,8 +30,29 @@ public class BuffItem : MonoBehaviour
             if (player != null)
             {
                 player.ApplyBuff(type, amount, duration);
-                Destroy(gameObject);
+                PlayAndDestroy(gameObject);
             }
+        }
+    }
+
+    void PlayAndDestroy(GameObject effect)
+    {
+        if (audioSource != null && sound != null)
+        {
+            audioSource.PlayOneShot(sound, 1f);
+
+            foreach (var r in GetComponentsInChildren<Renderer>())
+            {
+                r.enabled = false;
+            }
+            GetComponent<Collider2D>().enabled = false;
+            
+
+            Destroy(effect, sound.length);
+        }
+        else
+        {
+            Destroy(effect);
         }
     }
 }
