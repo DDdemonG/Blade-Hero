@@ -9,6 +9,7 @@ TagManager:
   - PlayerBlade
   - Effect
   - Enemy
+  - EnemySwordHolder
   layers:
   - Default
   - TransparentFX

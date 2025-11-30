@@ -55,7 +55,7 @@ public class BuffItem : MonoBehaviour
     {
         if (audioSource != null && sound != null)
         {
-            audioSource.PlayOneShot(sound, 1f);
+            audioSource.PlayOneShot(sound, 0.6f);
 
             foreach (var r in GetComponentsInChildren<Renderer>())
             {

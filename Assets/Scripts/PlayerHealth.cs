@@ -15,12 +15,15 @@ public class PlayerHealth : MonoBehaviour
     private bool isInvincible = false;
     private SpriteRenderer spriteRenderer;
     public GameObject shield;
+    private AudioSource audioSource;
+    public AudioClip shieldBreakSound;
 
     private void Awake()
     {
         currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (shield != null) shield.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -39,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
         {
             hasShield = false;
             shield.SetActive(hasShield);
+            audioSource.PlayOneShot(shieldBreakSound, 0.3f);
             Debug.Log("Defended once");
             StartCoroutine(InvincibilityRoutine());
             return; 

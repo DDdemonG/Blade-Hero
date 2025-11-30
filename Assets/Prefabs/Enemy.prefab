@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5367836234454980926}
   m_Layer: 0
   m_Name: EnemySwordHolder
-  m_TagString: Untagged
+  m_TagString: EnemySwordHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

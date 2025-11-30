@@ -10,10 +10,16 @@ public class Sword : MonoBehaviour
 
     public ParticleSystem clashEffectPrefab;
 
+    private float nextAttackTime = 0f;
+    public float attackCooldown = 0.2f;
+
+    private int damage;
+
     private void Awake()
     {
         playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         audioSource = GetComponent<AudioSource>();
+        damage = (level + 1) * 10;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -25,25 +31,23 @@ public class Sword : MonoBehaviour
                 if (!gameObject.activeInHierarchy || !otherSword.gameObject.activeInHierarchy)
                     return;
 
-                if (other.CompareTag("PlayerBlade"))
-                {
-                    return;
-                }
+                if (other.CompareTag("PlayerBlade")) return;
+
+                if (Time.time < nextAttackTime) return;
 
                 PlayClashEffect(other);
+
                 if (level > otherSword.level)
                 {
-                    PlayClashEffect(other);
                     PlayAndDestroy(otherSword.gameObject);
+                    nextAttackTime = Time.time + attackCooldown;
                 }
                 else if (level < otherSword.level)
                 {
-                    PlayClashEffect(other);
                     PlayAndDestroy(gameObject);
                 }
                 else
                 {
-                    PlayClashEffect(other);
                     PlayAndDestroy(otherSword.gameObject);
                     PlayAndDestroy(gameObject);
                 }
@@ -59,8 +63,6 @@ public class Sword : MonoBehaviour
 
             if (enemy != null)
             {
-                int damage = level * 10;
-
                 enemy.TakeDamage(damage);
                 return;
             }
@@ -70,7 +72,7 @@ public class Sword : MonoBehaviour
         {
             if (playerHP != null)
             {
-                playerHP.TakeDamage(level*10);
+                playerHP.TakeDamage(damage);
             }
         }
     }
