@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1875322586248783762}
   - component: {fileID: 8964628833079245090}
   - component: {fileID: 1425184465586057981}
+  - component: {fileID: 263201842184123448}
   m_Layer: 0
   m_Name: SheildEffect
   m_TagString: Effect
@@ -153,6 +154,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &263201842184123448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169854164722551685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76414c3616a9b447b4c10e2c7f093db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  amount: 1
+  duration: 1
 --- !u!1001 &1703606393148302182
 PrefabInstance:
   m_ObjectHideFlags: 0

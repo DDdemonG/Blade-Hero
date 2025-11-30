@@ -97,12 +97,17 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("IsAttacking", false);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Vector2 ?dir = null)
     {
         if (isDead || isHurt) return;
 
         currentHP -= damage;
         Debug.Log("Enemy TakeDamage: -" + damage + " | HP left = " + currentHP);
+
+        if(dir == null)
+        {
+            dir = gameObject.transform.position - player.position;
+        }
 
         if (currentHP <= 0)
         {
@@ -113,14 +118,18 @@ public class EnemyController : MonoBehaviour
         {
             isHurt = true;
             animator.SetBool("IsHurt", true);
-            KnockBack();
+            KnockBack(dir);
         }
     }
 
-    public void KnockBack()
+    public void KnockBack(Vector2? dir = null)
     {
-        Vector2 hitDirection = gameObject.transform.position - player.position;
-        rb.linearVelocity = hitDirection.normalized * knockbackForce;
+        if (dir == null) return;
+        else
+        {
+            Vector2 direction = (Vector2)dir;
+            rb.linearVelocity = direction.normalized * knockbackForce;
+        }
     }
 
     public void EndHurt()

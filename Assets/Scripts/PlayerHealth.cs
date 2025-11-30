@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using static Codice.CM.Common.CmCallContext;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     private int currentHealth;
+    private bool isDead = false;
+    private bool hasShield = false;
 
     public float invincibilityDuration = 1.0f;
     public float flashDuration = 0.1f; 
@@ -26,8 +29,15 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
         if (isInvincible) return;
-
+        if (hasShield)
+        {
+            hasShield = false;
+            Debug.Log("Defended once");
+            StartCoroutine(InvincibilityRoutine());
+            return; 
+        }
         currentHealth -= damage;
         Debug.Log("oooooof! Vie restant: " + currentHealth);
 
@@ -44,6 +54,14 @@ public class PlayerHealth : MonoBehaviour
         {
             StartCoroutine(InvincibilityRoutine());
         }
+    }
+
+    public void Heal(int amount)
+    {
+        if (isDead) return;
+        currentHealth += amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        Debug.Log("Heal! HP now: " + currentHealth);
     }
 
     void Die()
@@ -70,5 +88,11 @@ public class PlayerHealth : MonoBehaviour
 
         spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
         isInvincible = false;
+    }
+
+    public void AddShield()
+    {
+        hasShield = true;
+        Debug.Log("Get Shield!");
     }
 }
