@@ -525,7 +525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &427629467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2124,58 +2124,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: ChestLevel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: lootPrefab.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: bladePrefab.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: 'lootPrefab.Array.data[0]'
-      value: 
-      objectReference: {fileID: 70386913415551891, guid: 40c391d7c2ac9ad4182ef32c1e8bdd97, type: 3}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: 'lootPrefab.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2169854164722551685, guid: d6850b5725f24e54d9864f39f0df2336, type: 3}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: 'lootPrefab.Array.data[2]'
-      value: 
-      objectReference: {fileID: 415632301624817728, guid: 6054a6b3e8a65634a8087c07f6fa1d5d, type: 3}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: 'lootPrefab.Array.data[3]'
-      value: 
-      objectReference: {fileID: 468054754499083420, guid: f44bb878d2d528a4aaaedf2398ab17f7, type: 3}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: 'bladePrefab.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1400444030177783596, guid: 0bf1b4faea94b2343afefe6cc4171343, type: 3}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: 'bladePrefab.Array.data[1]'
-      value: 
-      objectReference: {fileID: 5287087597328749211, guid: 5d51ba4fc6484f84cad892076f42bc36, type: 3}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: 'bladePrefab.Array.data[2]'
-      value: 
-      objectReference: {fileID: 4719483955762018945, guid: 12c145df7ae498347941705f53a9bbbd, type: 3}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: 'bladePrefab.Array.data[3]'
-      value: 
-      objectReference: {fileID: 7556474091422524003, guid: b643614a851c4d7428ce6d0da5aa9f29, type: 3}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: 'bladePrefab.Array.data[4]'
-      value: 
-      objectReference: {fileID: 730086881670365761, guid: 99bd62e64298f2a40852bbd1c43309bc, type: 3}
-    - target: {fileID: 5786188960254986039, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
-      propertyPath: 'bladePrefab.Array.data[5]'
-      value: 
-      objectReference: {fileID: 4693854243054397104, guid: 83942c6aa6c95424b9add44d1c544f24, type: 3}
     - target: {fileID: 6805354441833734536, guid: e59d8a19eb937784fa9adb7308c421fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27
@@ -2484,54 +2432,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest_normal
       objectReference: {fileID: 0}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: lootPrefab.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: bladePrefab.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: 'lootPrefab.Array.data[0]'
-      value: 
-      objectReference: {fileID: 70386913415551891, guid: 40c391d7c2ac9ad4182ef32c1e8bdd97, type: 3}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: 'lootPrefab.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2169854164722551685, guid: d6850b5725f24e54d9864f39f0df2336, type: 3}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: 'lootPrefab.Array.data[2]'
-      value: 
-      objectReference: {fileID: 415632301624817728, guid: 6054a6b3e8a65634a8087c07f6fa1d5d, type: 3}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: 'lootPrefab.Array.data[3]'
-      value: 
-      objectReference: {fileID: 468054754499083420, guid: f44bb878d2d528a4aaaedf2398ab17f7, type: 3}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: 'bladePrefab.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1400444030177783596, guid: 0bf1b4faea94b2343afefe6cc4171343, type: 3}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: 'bladePrefab.Array.data[1]'
-      value: 
-      objectReference: {fileID: 5287087597328749211, guid: 5d51ba4fc6484f84cad892076f42bc36, type: 3}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: 'bladePrefab.Array.data[2]'
-      value: 
-      objectReference: {fileID: 4719483955762018945, guid: 12c145df7ae498347941705f53a9bbbd, type: 3}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: 'bladePrefab.Array.data[3]'
-      value: 
-      objectReference: {fileID: 7556474091422524003, guid: b643614a851c4d7428ce6d0da5aa9f29, type: 3}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: 'bladePrefab.Array.data[4]'
-      value: 
-      objectReference: {fileID: 730086881670365761, guid: 99bd62e64298f2a40852bbd1c43309bc, type: 3}
-    - target: {fileID: 2619012657453697471, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
-      propertyPath: 'bladePrefab.Array.data[5]'
-      value: 
-      objectReference: {fileID: 4693854243054397104, guid: 83942c6aa6c95424b9add44d1c544f24, type: 3}
     - target: {fileID: 7187864222386715984, guid: 29bb6b9ba5bd97f46a154786b1196dd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5
@@ -2813,58 +2713,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: ChestLevel
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: lootPrefab.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: bladePrefab.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: 'lootPrefab.Array.data[0]'
-      value: 
-      objectReference: {fileID: 70386913415551891, guid: 40c391d7c2ac9ad4182ef32c1e8bdd97, type: 3}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: 'lootPrefab.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2169854164722551685, guid: d6850b5725f24e54d9864f39f0df2336, type: 3}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: 'lootPrefab.Array.data[2]'
-      value: 
-      objectReference: {fileID: 415632301624817728, guid: 6054a6b3e8a65634a8087c07f6fa1d5d, type: 3}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: 'lootPrefab.Array.data[3]'
-      value: 
-      objectReference: {fileID: 468054754499083420, guid: f44bb878d2d528a4aaaedf2398ab17f7, type: 3}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: 'bladePrefab.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1400444030177783596, guid: 0bf1b4faea94b2343afefe6cc4171343, type: 3}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: 'bladePrefab.Array.data[1]'
-      value: 
-      objectReference: {fileID: 5287087597328749211, guid: 5d51ba4fc6484f84cad892076f42bc36, type: 3}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: 'bladePrefab.Array.data[2]'
-      value: 
-      objectReference: {fileID: 4719483955762018945, guid: 12c145df7ae498347941705f53a9bbbd, type: 3}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: 'bladePrefab.Array.data[3]'
-      value: 
-      objectReference: {fileID: 7556474091422524003, guid: b643614a851c4d7428ce6d0da5aa9f29, type: 3}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: 'bladePrefab.Array.data[4]'
-      value: 
-      objectReference: {fileID: 730086881670365761, guid: 99bd62e64298f2a40852bbd1c43309bc, type: 3}
-    - target: {fileID: 1387311593212742338, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
-      propertyPath: 'bladePrefab.Array.data[5]'
-      value: 
-      objectReference: {fileID: 4693854243054397104, guid: 83942c6aa6c95424b9add44d1c544f24, type: 3}
     - target: {fileID: 2201637522781421970, guid: 5daba48e0831614489a1cc4d351e5c7f, type: 3}
       propertyPath: m_Name
       value: Chest_luxe
@@ -2966,58 +2814,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest_white
       objectReference: {fileID: 0}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: ChestLevel
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: lootPrefab.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: bladePrefab.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: 'lootPrefab.Array.data[0]'
-      value: 
-      objectReference: {fileID: 70386913415551891, guid: 40c391d7c2ac9ad4182ef32c1e8bdd97, type: 3}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: 'lootPrefab.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2169854164722551685, guid: d6850b5725f24e54d9864f39f0df2336, type: 3}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: 'lootPrefab.Array.data[2]'
-      value: 
-      objectReference: {fileID: 415632301624817728, guid: 6054a6b3e8a65634a8087c07f6fa1d5d, type: 3}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: 'lootPrefab.Array.data[3]'
-      value: 
-      objectReference: {fileID: 468054754499083420, guid: f44bb878d2d528a4aaaedf2398ab17f7, type: 3}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: 'bladePrefab.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1400444030177783596, guid: 0bf1b4faea94b2343afefe6cc4171343, type: 3}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: 'bladePrefab.Array.data[1]'
-      value: 
-      objectReference: {fileID: 5287087597328749211, guid: 5d51ba4fc6484f84cad892076f42bc36, type: 3}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: 'bladePrefab.Array.data[2]'
-      value: 
-      objectReference: {fileID: 4719483955762018945, guid: 12c145df7ae498347941705f53a9bbbd, type: 3}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: 'bladePrefab.Array.data[3]'
-      value: 
-      objectReference: {fileID: 7556474091422524003, guid: b643614a851c4d7428ce6d0da5aa9f29, type: 3}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: 'bladePrefab.Array.data[4]'
-      value: 
-      objectReference: {fileID: 730086881670365761, guid: 99bd62e64298f2a40852bbd1c43309bc, type: 3}
-    - target: {fileID: 4541755023189574057, guid: 272016402a25b3e47985993451b8c8fe, type: 3}
-      propertyPath: 'bladePrefab.Array.data[5]'
-      value: 
-      objectReference: {fileID: 4693854243054397104, guid: 83942c6aa6c95424b9add44d1c544f24, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
