@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
     private Collider2D col;
+    public MenuController menuController;
 
     public int maxHealth = 100;
     private int currentHealth;
@@ -147,7 +148,13 @@ public class PlayerHealth : MonoBehaviour
     void DisablePlayer()
     {
         Debug.Log("GAME OVER");
+
         Time.timeScale = 0f;
+
+        if (menuController != null)
+        {
+            menuController.ShowRestart();
+        }
     }
 
 }

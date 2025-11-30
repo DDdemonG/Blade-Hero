@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 175090449}
   - component: {fileID: 175090448}
   - component: {fileID: 175090447}
+  - component: {fileID: 175090451}
   m_Layer: 5
   m_Name: Easy Button
   m_TagString: Untagged
@@ -303,7 +304,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1939452428}
         m_TargetAssemblyTypeName: MenuController, Scripts
-        m_MethodName: StartGame
+        m_MethodName: SetEasy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -351,6 +352,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175090445}
   m_CullTransparentMesh: 1
+--- !u!114 &175090451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175090445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e8d4a52830a15408268a2050f7e638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMenuPanel: {fileID: 0}
+  gameMenuPanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  mainAudio: {fileID: 0}
+  waveManager: {fileID: 0}
+  playerMove: {fileID: 0}
+  playerHealth: {fileID: 0}
+  titleRect: {fileID: 0}
+  buttonRect: {fileID: 0}
+  heartSlot: {fileID: 0}
+  easyEnemyHP: 50
+  mediumEnemyHP: 100
+  hardEnemyHP: 200
 --- !u!1 &190715602
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +987,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1939452428}
         m_TargetAssemblyTypeName: MenuController, Scripts
-        m_MethodName: StartGame
+        m_MethodName: SetHard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1415,7 +1441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1058, y: -41}
+  m_AnchoredPosition: {x: 11, y: -41}
   m_SizeDelta: {x: 217.1693, y: 49.081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &987982393
@@ -1486,7 +1512,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1939452428}
         m_TargetAssemblyTypeName: MenuController, Scripts
-        m_MethodName: StartGame
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2188,7 +2214,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1939452428}
         m_TargetAssemblyTypeName: MenuController, Scripts
-        m_MethodName: StartGame
+        m_MethodName: SetMedium
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2354,12 +2380,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMenuPanel: {fileID: 2048036715}
   gameMenuPanel: {fileID: 562899428}
+  gameOverPanel: {fileID: 0}
   mainAudio: {fileID: 519420034}
   waveManager: {fileID: 1984518095}
   playerMove: {fileID: 1985465053}
+  playerHealth: {fileID: 0}
   titleRect: {fileID: 117344289}
   buttonRect: {fileID: 621179491}
   heartSlot: {fileID: 190715603}
+  easyEnemyHP: 50
+  mediumEnemyHP: 100
+  hardEnemyHP: 200
 --- !u!114 &1984518095 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8307646101059353634, guid: a44fe828f7960be438da9435fe7a47a8, type: 3}
@@ -2402,7 +2433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2048036716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2643,6 +2674,10 @@ PrefabInstance:
       propertyPath: heartContainer
       value: 
       objectReference: {fileID: 190715602}
+    - target: {fileID: 1506980403004270793, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
+      propertyPath: menuController
+      value: 
+      objectReference: {fileID: 1939452428}
     - target: {fileID: 3730818134467339296, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
       propertyPath: m_Enabled
       value: 1

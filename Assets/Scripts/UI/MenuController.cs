@@ -5,19 +5,28 @@ public class MenuController : MonoBehaviour
 {
     public GameObject startMenuPanel;
     public GameObject gameMenuPanel;
+    public GameObject gameOverPanel;
 
     public AudioSource mainAudio;
     public WaveManager waveManager;
     public PlayerController playerMove;
+    public PlayerHealth playerHealth;
 
     public RectTransform titleRect;
     public RectTransform buttonRect;
     public RectTransform heartSlot;
 
+    public int easyEnemyHP = 50;
+    public int mediumEnemyHP = 100;
+    public int hardEnemyHP = 200;
+
+    private int currentDifficultyHP = 100;
+
     private void Start()
     {
         if (startMenuPanel != null) startMenuPanel.SetActive(true);
         if (gameMenuPanel != null) gameMenuPanel.SetActive(false);
+        if (gameOverPanel != null) gameOverPanel.SetActive(false);
         if (mainAudio != null) mainAudio.enabled = false;
         if (waveManager != null) waveManager.enabled = false;
         if (playerMove != null) playerMove.enabled = false;
@@ -94,6 +103,47 @@ public class MenuController : MonoBehaviour
 
         if (playerMove != null) playerMove.enabled = true;
 
-        Debug.Log("GO!!!!");
+        Debug.Log("GO!!!!  Difficulty HP = " + currentDifficultyHP);
+    }
+    public void SetEasy()
+    {
+        currentDifficultyHP = easyEnemyHP;
+        Debug.Log("Difficulty: EASY");
+    }
+
+    public void SetMedium()
+    {
+        currentDifficultyHP = mediumEnemyHP;
+        Debug.Log("Difficulty: MEDIUM");
+    }
+
+    public void SetHard()
+    {
+        currentDifficultyHP = hardEnemyHP;
+        Debug.Log("Difficulty: HARD");
+    }
+
+    public int GetCurrentDifficultyHP()
+    {
+        return currentDifficultyHP;
+    }
+    public void ShowGameOver()
+    {
+        Time.timeScale = 0f;
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+    }
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
+        );
+    }
+    public void ShowRestart()
+    {
+        if (startMenuPanel != null)
+            startMenuPanel.SetActive(true);
     }
 }
