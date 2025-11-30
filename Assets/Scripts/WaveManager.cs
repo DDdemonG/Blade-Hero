@@ -9,7 +9,9 @@ public class WaveManager : MonoBehaviour
     public GameObject enemyPrefab;
 
     private float spawnTimer = 0f;
-    private float spawnInterval = 2f;
+
+    public GameObject[] chestPrefabs;
+    public float chestChance = 0.05f;
 
     void Update()
     {
@@ -27,6 +29,12 @@ public class WaveManager : MonoBehaviour
 
     void SpawnLootOrEnemy()
     {
+        float roll = Random.value;
+
+        if (roll < chestChance)
+        {
+            SpawnChest();
+        }
         if (Random.value > 0.7f)
         {
             SpawnEnemy();
@@ -35,6 +43,35 @@ public class WaveManager : MonoBehaviour
         {
             SpawnLoot();
         }
+    }
+
+    void SpawnChest()
+    {
+        if (chestPrefabs.Length == 0) return;
+
+        int chestIndex = 0;
+        float r = Random.value;
+
+        if (gameTime < 60f)
+        {
+            chestIndex = 0;
+        }
+        else if (gameTime < 120f)
+        {
+            if (r < 0.7f) chestIndex = 0;
+            else chestIndex = 1;
+        }
+        else
+        {
+            if (r < 0.5f) chestIndex = 0;
+            else if (r < 0.8f) chestIndex = 1;
+            else if (r < 0.95f) chestIndex = 2;
+            else chestIndex = 3;
+        }
+
+        Vector2 randomPos = (Vector2)playerTransform.position + Random.insideUnitCircle.normalized * 10f;
+
+        Instantiate(chestPrefabs[chestIndex], randomPos, Quaternion.identity);
     }
 
     void SpawnLoot()

@@ -7,6 +7,7 @@ TagManager:
   - EnemyBlade
   - LootBlade
   - PlayerBlade
+  - Effect
   layers:
   - Default
   - TransparentFX
