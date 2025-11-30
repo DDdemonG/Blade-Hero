@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject shield;
     private AudioSource audioSource;
     public AudioClip shieldBreakSound;
+    public AudioClip getHitSound;
 
     private void Awake()
     {
@@ -42,13 +43,14 @@ public class PlayerHealth : MonoBehaviour
         {
             hasShield = false;
             shield.SetActive(hasShield);
-            audioSource.PlayOneShot(shieldBreakSound, 0.3f);
+            audioSource.PlayOneShot(shieldBreakSound, 0.1f);
             Debug.Log("Defended once");
             StartCoroutine(InvincibilityRoutine());
             return; 
         }
         currentHealth -= damage;
         Debug.Log("oooooof! Vie restant: " + currentHealth);
+        audioSource.PlayOneShot(getHitSound, 0.5f);
 
         if (hitParticle != null)
         {

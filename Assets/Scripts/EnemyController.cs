@@ -23,12 +23,16 @@ public class EnemyController : MonoBehaviour
 
     private PlayerHealth playerHP;
 
+    private AudioSource audioSource;
+    public AudioClip getHitSound;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         playerHP = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -102,6 +106,7 @@ public class EnemyController : MonoBehaviour
         if (isDead || isHurt) return;
 
         currentHP -= damage;
+        audioSource.PlayOneShot(getHitSound, 0.5f);
         Debug.Log("Enemy TakeDamage: -" + damage + " | HP left = " + currentHP);
 
         if(dir == null)
