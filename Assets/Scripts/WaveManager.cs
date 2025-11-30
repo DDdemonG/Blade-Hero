@@ -35,7 +35,7 @@ public class WaveManager : MonoBehaviour
         {
             SpawnChest();
         }
-        if (Random.value > 0.7f)
+        if (Random.value > 0.3f)
         {
             SpawnEnemy();
         }
@@ -104,6 +104,7 @@ public class WaveManager : MonoBehaviour
 
     void SpawnEnemy()
     {
+          Debug.Log("Enemy Spawned");
         Vector2 randomPos = (Vector2)playerTransform.position + Random.insideUnitCircle.normalized * 12f;
         GameObject enemyObj = Instantiate(enemyPrefab, randomPos, Quaternion.identity);
 

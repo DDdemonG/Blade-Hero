@@ -5,6 +5,8 @@ public class Sword : MonoBehaviour
 {
     public int level = 0;
 
+    private AudioSource audioSource;
+
     private PlayerHealth playerHP;
 
     public ParticleSystem clashEffectPrefab;
@@ -12,6 +14,7 @@ public class Sword : MonoBehaviour
     private void Awake()
     {
         playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -29,22 +32,21 @@ public class Sword : MonoBehaviour
                 }
 
                 PlayClashEffect(other);
-
                 if (level > otherSword.level)
                 {
-                    Debug.Log("");
-                    Destroy(otherSword.gameObject);
+                    PlayClashEffect(other);
+                    PlayAndDestroy(otherSword.gameObject);
                 }
                 else if (level < otherSword.level)
                 {
-                    Debug.Log("");
-                    Destroy(gameObject);
+                    PlayClashEffect(other);
+                    PlayAndDestroy(gameObject);
                 }
                 else
                 {
-                    Debug.Log("");
-                    Destroy(otherSword.gameObject);
-                    Destroy(gameObject);
+                    PlayClashEffect(other);
+                    PlayAndDestroy(otherSword.gameObject);
+                    PlayAndDestroy(gameObject);
                 }
 
                 return;
@@ -81,6 +83,15 @@ public class Sword : MonoBehaviour
         Vector2 contactPoint = targetCollider.ClosestPoint(transform.position);
 
         Instantiate(clashEffectPrefab, contactPoint, Quaternion.identity);
+    }
+    void PlayAndDestroy(GameObject target)
+    {
+        if (audioSource != null && audioSource.clip != null)
+        {
+            AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+        }
+
+        Destroy(target);
     }
 }
 

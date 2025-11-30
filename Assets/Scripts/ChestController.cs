@@ -1,13 +1,16 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ChestController : MonoBehaviour
 {
     private Animator animator;
     private bool isOpened = false;
+    private AudioSource audioSource;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -28,6 +31,10 @@ public class ChestController : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("Open");
+        }
+        if (audioSource != null)
+        {
+            audioSource.Play();  
         }
 
         Debug.Log("Chest open");
