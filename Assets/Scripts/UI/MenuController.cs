@@ -30,6 +30,7 @@ public class MenuController : MonoBehaviour
         if (mainAudio != null) mainAudio.enabled = false;
         if (waveManager != null) waveManager.enabled = false;
         if (playerMove != null) playerMove.enabled = false;
+        StartCoroutine(StartGameSequence());
     }
 
     public void StartGame()
