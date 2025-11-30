@@ -56,5 +56,8 @@ TagManager:
   - name: Weapons
     uniqueID: 965365671
     locked: 0
+  - name: effect
+    uniqueID: 3254792183
+    locked: 0
   m_RenderingLayers:
   - Default

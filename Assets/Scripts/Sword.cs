@@ -7,6 +7,8 @@ public class Sword : MonoBehaviour
 
     private PlayerHealth playerHP;
 
+    public ParticleSystem clashEffectPrefab;
+
     private void Awake()
     {
         playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
@@ -25,6 +27,8 @@ public class Sword : MonoBehaviour
                 {
                     return;
                 }
+
+                PlayClashEffect(other);
 
                 if (level > otherSword.level)
                 {
@@ -68,6 +72,15 @@ public class Sword : MonoBehaviour
                 playerHP.TakeDamage(level*10);
             }
         }
+    }
+
+    void PlayClashEffect(Collider2D targetCollider)
+    {
+        if (clashEffectPrefab == null) return;
+
+        Vector2 contactPoint = targetCollider.ClosestPoint(transform.position);
+
+        Instantiate(clashEffectPrefab, contactPoint, Quaternion.identity);
     }
 }
 
