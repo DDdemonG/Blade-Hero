@@ -18,7 +18,9 @@ public class PlayerHealth : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip shieldBreakSound;
     public AudioClip getHitSound;
-    private PlayerController playerCtrl;
+
+    public GameObject heartContainer;
+    private HeartContainerManager heartManager;
 
     private void Awake()
     {
@@ -26,7 +28,8 @@ public class PlayerHealth : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (shield != null) shield.SetActive(false);
         audioSource = GetComponent<AudioSource>();
-        playerCtrl = GetComponent<PlayerController>();
+        heartManager = heartContainer.GetComponent<HeartContainerManager>();
+        heartManager.InitHearts(maxHealth);
     }
 
     void Start()
@@ -53,6 +56,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         Debug.Log("oooooof! Vie restant: " + currentHealth);
         audioSource.PlayOneShot(getHitSound, 0.5f);
+        heartManager.UpdateHearts(currentHealth);
 
         if (hitParticle != null)
         {

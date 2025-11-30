@@ -19,7 +19,7 @@ public class Sword : MonoBehaviour
     {
         playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         audioSource = GetComponent<AudioSource>();
-        damage = (level + 1) * 10;
+        damage = level * 10;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

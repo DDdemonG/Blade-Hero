@@ -4,6 +4,7 @@ using System.Collections;
 public class MenuController : MonoBehaviour
 {
     public GameObject startMenuPanel;
+    public GameObject gameMenuPanel;
 
     public AudioSource mainAudio;
     public WaveManager waveManager;
@@ -11,10 +12,12 @@ public class MenuController : MonoBehaviour
 
     public RectTransform titleRect;
     public RectTransform buttonRect;
+    public RectTransform heartSlot;
 
     private void Start()
     {
         if (startMenuPanel != null) startMenuPanel.SetActive(true);
+        if (gameMenuPanel != null) gameMenuPanel.SetActive(false);
         if (mainAudio != null) mainAudio.enabled = false;
         if (waveManager != null) waveManager.enabled = false;
         if (playerMove != null) playerMove.enabled = false;
@@ -55,6 +58,29 @@ public class MenuController : MonoBehaviour
         }
 
         if (startMenuPanel != null) startMenuPanel.SetActive(false);
+        if (gameMenuPanel != null) gameMenuPanel.SetActive(true);
+
+        if (heartSlot != null)
+        {
+            Vector2 heartStart = heartSlot.anchoredPosition;
+
+            Vector2 btnEnd = new Vector2(heartStart.x + 960f, heartStart.y);
+
+            float duration = 0.6f;
+            float timer = 0f;
+
+            while (timer < duration)
+            {
+                timer += Time.unscaledDeltaTime;
+                float t = timer / duration;
+
+                t = Mathf.SmoothStep(0f, 1f, t);
+
+                heartSlot.anchoredPosition = Vector2.Lerp(heartStart, btnEnd, t);
+
+                yield return null;
+            }
+        }
 
         if (waveManager != null)
         {
