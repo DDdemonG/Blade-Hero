@@ -199,6 +199,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1686cb7601bac4b46ba19d295d8e9868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lootPrefab:
+  - {fileID: 70386913415551891, guid: 40c391d7c2ac9ad4182ef32c1e8bdd97, type: 3}
+  - {fileID: 2169854164722551685, guid: d6850b5725f24e54d9864f39f0df2336, type: 3}
+  - {fileID: 415632301624817728, guid: 6054a6b3e8a65634a8087c07f6fa1d5d, type: 3}
+  - {fileID: 468054754499083420, guid: f44bb878d2d528a4aaaedf2398ab17f7, type: 3}
+  bladePrefab:
+  - {fileID: 1400444030177783596, guid: 0bf1b4faea94b2343afefe6cc4171343, type: 3}
+  - {fileID: 5287087597328749211, guid: 5d51ba4fc6484f84cad892076f42bc36, type: 3}
+  - {fileID: 4719483955762018945, guid: 12c145df7ae498347941705f53a9bbbd, type: 3}
+  - {fileID: 7556474091422524003, guid: b643614a851c4d7428ce6d0da5aa9f29, type: 3}
+  - {fileID: 730086881670365761, guid: 99bd62e64298f2a40852bbd1c43309bc, type: 3}
+  - {fileID: 4693854243054397104, guid: 83942c6aa6c95424b9add44d1c544f24, type: 3}
+  ChestLevel: 3
+  waitTime: 1
+  fadeDuration: 2
 --- !u!82 &6716284348851852718
 AudioSource:
   m_ObjectHideFlags: 0
