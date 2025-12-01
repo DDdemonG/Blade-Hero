@@ -9,7 +9,6 @@ public class AreaEffect : MonoBehaviour
     public int amount = 30;
 
     private PlayerHealth playerHP;
-    private EnemyController enemyCtrl;
 
     private void Awake()
     {

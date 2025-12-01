@@ -167,10 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76414c3616a9b447b4c10e2c7f093db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  type: 1
   amount: 1
   duration: 1
   sound: {fileID: 8300000, guid: 473f96e2206775140be5734f3b6dc044, type: 3}
+  pickupDelay: 0.5
 --- !u!82 &4561251212906915409
 AudioSource:
   m_ObjectHideFlags: 0

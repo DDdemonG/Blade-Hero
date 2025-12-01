@@ -34,6 +34,8 @@ public class EnemyController : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip getHitSound;
 
+    private ScoreManager scoreManager;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -41,6 +43,8 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerHP = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
         audioSource = GetComponent<AudioSource>();
+        scoreManager = GameObject.Find("GameManager").GetComponent<ScoreManager>();
+
     }
 
     void Start()
@@ -155,6 +159,7 @@ public class EnemyController : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
+        scoreManager.AddKill(10);
         Debug.Log("Enemy Died!");
         animator.SetBool("IsDead", true);
         rb.linearVelocity = Vector2.zero;
