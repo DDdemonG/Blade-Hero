@@ -17,17 +17,9 @@ Il s’agit d’un jeu 2D développé avec **Unity 6.2**, dans lequel le joueur 
 ### 🎁 Objets et interactions
 - **États / power-ups aléatoires** apparaissent régulièrement sur la carte.  
   Le joueur peut les ramasser pour obtenir des effets particuliers (bonus de stats, vitesse, attaque, etc.).
+  Survivre le plus longtemps possible pour obtenir un meilleur score.
 - **Coffres générés aléatoirement** apparaissent dans la zone et peuvent être ouverts par le joueur pour obtenir des récompenses.
-
-### 🧩 Fonctionnalités possible
-- **Possibilité d’ajouter un système de Boss** :  
-  Dans une version future, un Boss pourrait apparaître après un certain temps ou après un nombre spécifique d’ennemis vaincus.  
-  Le Boss pourrait posséder :
-  - un modèle plus grand,
-  - des attaques spéciales,
-  - des mouvements plus complexes,
-  - une barre de vie dédiée,
-  - des récompenses spéciales après défaite.  
+ 
 
 ---
 
@@ -37,6 +29,7 @@ Tous les éléments visuels utilisés dans ce projet proviennent de sources en l
 - itch.io (free asset packs)  
 - aigei.com 爱给网 
 - Ressources partagées via des liens de téléchargement / cloud drive
+- chatgpt.com
 
 ### 🔊 Audio / Sound Effects  
 Les effets sonores proviennent de sites gratuits ou de ressources accessibles publiquement :  
@@ -56,6 +49,17 @@ Les effets sonores proviennent de sites gratuits ou de ressources accessibles pu
 - Git/GitHub
 
 ---
+
+## Utilisation d’IA
+- Créer les Images pour Map et Texture
+- Aider pour débogage
+- Gérer la balance du difficulté du jeux
+- Aider pour les Tests automatisés
+- Aider a apprendre comment intègrer les animations.
+- Collercter les ressources pour  les sons et les animations
+- Apprendre de créer un map 2D infinitif
+- Calculer le probleme de UI extérieur du écran
+- Aider et calculer les blades autour du personnage(la distance).
 
 ## 👥 Équipe (Team)
 - Siyuan Zhao
