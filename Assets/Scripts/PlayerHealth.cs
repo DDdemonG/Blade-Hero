@@ -153,8 +153,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (menuController != null)
         {
-            menuController.ShowGameOver();
-            menuController.ShowRestart();
+            menuController.ShowDeadMenuPanel();
         }
     }
     public void SetMaxHealth(int value)

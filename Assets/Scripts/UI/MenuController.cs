@@ -15,6 +15,7 @@ public class MenuController : MonoBehaviour
     public GameObject startMenuPanel;
     public GameObject gameMenuPanel;
     public GameObject gameOverText;
+    public GameObject DeadMenuPanel;
 
     public AudioSource mainAudio;
     public WaveManager waveManager;
@@ -43,6 +44,7 @@ public class MenuController : MonoBehaviour
             if (startMenuPanel != null) startMenuPanel.SetActive(true);
         if (gameMenuPanel != null) gameMenuPanel.SetActive(false);
         if (gameOverText != null) gameOverText.SetActive(false);
+        if (DeadMenuPanel != null) DeadMenuPanel.SetActive(false);
         if (mainAudio != null) mainAudio.enabled = false;
         if (waveManager != null) waveManager.enabled = false;
         if (playerMove != null) playerMove.enabled = false;
@@ -152,11 +154,7 @@ public class MenuController : MonoBehaviour
     {
         return currentDifficultyHP;
     }
-    public void ShowGameOver()
-    {
-        if (gameOverText != null)
-            gameOverText.SetActive(true);
-    }
+   
     public void RestartGame()
     {
         Time.timeScale = 1f;
@@ -165,9 +163,16 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
   
     }
-    public void ShowRestart()
+    public void ShowDeadMenuPanel()
     {
-        if (startMenuPanel != null)
-            startMenuPanel.SetActive(true);
+        if (DeadMenuPanel != null) DeadMenuPanel.SetActive(true);
     }
-}
+    public void BackToMenu()
+    {
+
+        Time.timeScale = 1f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
+        );
+    }
+    }
