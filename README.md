@@ -60,6 +60,7 @@ Les effets sonores proviennent de sites gratuits ou de ressources accessibles pu
 - Apprendre de créer un map 2D infinitif
 - Calculer le probleme de UI extérieur du écran
 - Aider et calculer les blades autour du personnage(la distance).
+- Aider pour générer les énemies à l'extérieur de l'écran
 
 ## 👥 Équipe (Team)
 - Siyuan Zhao
@@ -81,3 +82,20 @@ Les effets sonores proviennent de sites gratuits ou de ressources accessibles pu
 - Le Damage du blades envers l'enemy
 - Ajouter les sons du jeux
   
+## Contributions individuelles – Siyuan Zhao
+- Animation de enemy
+- interface menu start et title
+- early version of spawn manager
+- chest animation et fonctionalité
+- explotion animaiton et domage
+- heal animation et soin
+- spin speed up buff
+- shield buff and visual effect
+- system de score
+- IA de enemy
+- system de blade
+- son de heal, exploxion, shield, shield break, spin speed up
+- particule de blade hit
+- particule de spin speed up effect loot
+- button animation
+- render priorty
