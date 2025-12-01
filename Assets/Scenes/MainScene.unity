@@ -3115,6 +3115,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1506980403004270793, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
+      propertyPath: deadSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9848553a86a7e7a43b16a514765a3ed3, type: 3}
+    - target: {fileID: 1506980403004270793, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
       propertyPath: maxHealth
       value: 50
       objectReference: {fileID: 0}

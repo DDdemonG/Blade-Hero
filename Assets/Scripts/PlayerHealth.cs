@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip shieldBreakSound;
     public AudioClip getHitSound;
-
+    public AudioClip deadSound;
     public GameObject heartContainer;
     private HeartContainerManager heartManager;
 
@@ -96,6 +96,7 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
 
         Debug.Log("Player dead");
+        audioSource.PlayOneShot(deadSound, 0.5f);
         isInvincible = false;
 
         if (rb != null)
