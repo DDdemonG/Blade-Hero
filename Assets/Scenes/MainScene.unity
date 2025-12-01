@@ -2495,7 +2495,7 @@ MonoBehaviour:
   mainAudio: {fileID: 519420034}
   waveManager: {fileID: 1984518095}
   playerMove: {fileID: 1985465053}
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 1985465057}
   titleRect: {fileID: 117344289}
   buttonRect: {fileID: 621179491}
   heartSlot: {fileID: 190715603}
@@ -2527,6 +2527,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35da9d8e5e5a74e418201171af96fb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1985465057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1506980403004270793, guid: e00bea8306f5d774abad270bc7d5b92c, type: 3}
+  m_PrefabInstance: {fileID: 2312004298995110112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d87dffa6d7e084da1c03d6941c593b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2048036715

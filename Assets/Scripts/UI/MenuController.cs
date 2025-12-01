@@ -4,6 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public enum Difficulty
+    {
+        Easy,
+        Medium,
+        Hard
+    }
+    public static Difficulty currentDifficulty = Difficulty.Medium;
     public static bool autoStartAfterReload = false;
     public GameObject startMenuPanel;
     public GameObject gameMenuPanel;
@@ -113,23 +120,31 @@ public class MenuController : MonoBehaviour
 
         if (playerMove != null) playerMove.enabled = true;
 
+        if (playerHealth != null)
+        {
+            playerHealth.SetMaxHealth(currentDifficultyHP);
+        }
+
         Debug.Log("GO!!!!  Difficulty HP = " + currentDifficultyHP);
     }
     public void SetEasy()
     {
         currentDifficultyHP = easyEnemyHP;
+        currentDifficulty = Difficulty.Easy;
         Debug.Log("Difficulty: EASY");
     }
 
     public void SetMedium()
     {
         currentDifficultyHP = mediumEnemyHP;
+        currentDifficulty = Difficulty.Medium;
         Debug.Log("Difficulty: MEDIUM");
     }
 
     public void SetHard()
     {
         currentDifficultyHP = hardEnemyHP;
+        currentDifficulty = Difficulty.Hard;
         Debug.Log("Difficulty: HARD");
     }
 

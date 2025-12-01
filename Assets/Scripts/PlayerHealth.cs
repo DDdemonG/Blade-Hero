@@ -157,5 +157,19 @@ public class PlayerHealth : MonoBehaviour
             menuController.ShowRestart();
         }
     }
+    public void SetMaxHealth(int value)
+    {
+        maxHealth = value;
+        currentHealth = value;
+
+        if (heartManager != null)
+        {
+            heartManager.InitHearts(maxHealth);
+            heartManager.UpdateHearts(currentHealth);
+        }
+
+        Debug.Log("Player HP set to: " + maxHealth);
+    }
+
 
 }

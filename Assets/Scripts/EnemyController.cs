@@ -2,6 +2,14 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public int easyHP = 30;
+    public int mediumHP = 60;
+    public int hardHP = 100;
+
+    public int easyDamage = 10;
+    public int mediumDamage = 15;
+    public int hardDamage = 25;
+
     public Transform player;
     public float moveSpeed = 2f;
     public float attackDistance = 0.7f;
@@ -37,7 +45,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        currentHP = maxHP;
+        ApplyDifficultyStats();
 
         GameObject p = GameObject.FindGameObjectWithTag("Player");
         if (p != null)
@@ -46,7 +54,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("aucun joueur trouv?");
+            Debug.LogError("aucun joueur trouv¨¦");
         }
     }
 
@@ -184,4 +192,30 @@ public class EnemyController : MonoBehaviour
         }
         
     }
+    void ApplyDifficultyStats()
+    {
+        switch (MenuController.currentDifficulty)
+        {
+            case MenuController.Difficulty.Easy:
+                maxHP = easyHP;
+                attackDamage = easyDamage;
+                break;
+
+            case MenuController.Difficulty.Medium:
+                maxHP = mediumHP;
+                attackDamage = mediumDamage;
+                break;
+
+            case MenuController.Difficulty.Hard:
+                maxHP = hardHP;
+                attackDamage = hardDamage;
+                break;
+        }
+        currentHP = maxHP;
+        Debug.Log("Enemy Difficulty Applied: "
+            + MenuController.currentDifficulty
+            + " | HP = " + maxHP
+            + " | DMG = " + attackDamage);
+    }
+
 }

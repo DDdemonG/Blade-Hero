@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    private float difficultyMultiplier = 1f;
+    public float easyLootRate = 0.6f;
+    public float mediumLootRate = 0.5f;
+    public float hardLootRate = 0.5f;
+
+    private float currentLootRate;
     public float gameTime = 0f; 
     public Transform playerTransform; 
 
@@ -12,13 +18,18 @@ public class WaveManager : MonoBehaviour
 
     public GameObject[] chestPrefabs;
     public float chestChance = 0.05f;
+    void Start()
+    {
+        ApplyDifficulty();
+    }
 
     void Update()
     {
         gameTime += Time.deltaTime;
         spawnTimer += Time.deltaTime;
 
-        float currentInterval = Mathf.Max(0.5f, 2f - (gameTime / 180f));
+        float baseInterval = Mathf.Max(0.5f, 2f - (gameTime / 180f));
+        float currentInterval = baseInterval * difficultyMultiplier;
 
         if (spawnTimer >= currentInterval)
         {
@@ -30,19 +41,34 @@ public class WaveManager : MonoBehaviour
     void SpawnLootOrEnemy()
     {
         float roll = Random.value;
-
         if (roll < chestChance)
         {
             SpawnChest();
         }
-        if (Random.value > 0.3f)
+        switch (MenuController.currentDifficulty)
         {
-            SpawnEnemy();
+            case MenuController.Difficulty.Easy:
+                currentLootRate = easyLootRate;  
+                break;
+
+            case MenuController.Difficulty.Medium:
+                currentLootRate = mediumLootRate; 
+                break;
+
+            case MenuController.Difficulty.Hard:
+                currentLootRate = hardLootRate;  
+                break;
+        }
+        if (Random.value < currentLootRate)
+        {
+            SpawnLoot();    
         }
         else
         {
-            SpawnLoot();
+            SpawnEnemy();   
         }
+
+        Debug.Log("LootRate = " + currentLootRate);
     }
 
     void SpawnChest()
@@ -141,4 +167,24 @@ public class WaveManager : MonoBehaviour
             enemyEquip.SetupWeapon(level, count);
         }
     }
+    void ApplyDifficulty()
+    {
+        switch (MenuController.currentDifficulty)
+        {
+            case MenuController.Difficulty.Easy:
+                difficultyMultiplier = 1.4f;  
+                break;
+
+            case MenuController.Difficulty.Medium:
+                difficultyMultiplier = 1.0f;
+                break;
+
+            case MenuController.Difficulty.Hard:
+                difficultyMultiplier = 0.6f;  
+                break;
+        }
+
+        Debug.Log("Wave Difficulty Multiplier: " + difficultyMultiplier);
+    }
+
 }
