@@ -64,3 +64,20 @@ Les effets sonores proviennent de sites gratuits ou de ressources accessibles pu
 ## 👥 Équipe (Team)
 - Siyuan Zhao
 - Lucas Zijie Qin  
+
+## Contributions individuelles – Lucas Zijie Qin
+- Animation de mort du joueur
+- Effet sonore de mort
+- Optimisation des particules
+- Système de difficulté (Easy / Medium / Hard)
+- Infinity map 2d
+- Recherche de tous les ressources d'art et sons
+- Système de redémarrage du jeu
+- Text de Game Over
+- Bouton Back to Menu
+- Animation de mort du joueur
+- Animation de Idle
+- La collision entre les blades
+- Le Damage du blades envers l'enemy
+- Ajouter les sons du jeux
+  
