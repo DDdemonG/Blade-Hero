@@ -153,6 +153,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (menuController != null)
         {
+            menuController.ShowGameOver();
             menuController.ShowRestart();
         }
     }

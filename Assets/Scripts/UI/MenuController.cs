@@ -7,7 +7,7 @@ public class MenuController : MonoBehaviour
     public static bool autoStartAfterReload = false;
     public GameObject startMenuPanel;
     public GameObject gameMenuPanel;
-    public GameObject gameOverPanel;
+    public GameObject gameOverText;
 
     public AudioSource mainAudio;
     public WaveManager waveManager;
@@ -35,7 +35,7 @@ public class MenuController : MonoBehaviour
         }
             if (startMenuPanel != null) startMenuPanel.SetActive(true);
         if (gameMenuPanel != null) gameMenuPanel.SetActive(false);
-        if (gameOverPanel != null) gameOverPanel.SetActive(false);
+        if (gameOverText != null) gameOverText.SetActive(false);
         if (mainAudio != null) mainAudio.enabled = false;
         if (waveManager != null) waveManager.enabled = false;
         if (playerMove != null) playerMove.enabled = false;
@@ -139,10 +139,8 @@ public class MenuController : MonoBehaviour
     }
     public void ShowGameOver()
     {
-        Time.timeScale = 0f;
-
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(true);
+        if (gameOverText != null)
+            gameOverText.SetActive(true);
     }
     public void RestartGame()
     {

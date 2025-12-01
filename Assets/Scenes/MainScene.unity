@@ -832,7 +832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &562899429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2491,7 +2491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMenuPanel: {fileID: 2048036715}
   gameMenuPanel: {fileID: 562899428}
-  gameOverPanel: {fileID: 0}
+  gameOverText: {fileID: 915190048}
   mainAudio: {fileID: 519420034}
   waveManager: {fileID: 1984518095}
   playerMove: {fileID: 1985465053}
