@@ -19,11 +19,7 @@ public class PlayerBuffs : MonoBehaviour
         switch (type)
         {
             case BuffItem.BuffType.SpeedUp:
-                Debug.Log($"Speed up {amount}, in {duration}sec");
-                break;
-
-            case BuffItem.BuffType.AttackUp:
-                Debug.Log($"Attack up {amount} times, in {duration}sec");
+                StartCoroutine(SpeedUp(amount, duration));
                 break;
 
             case BuffItem.BuffType.Shield:
@@ -51,4 +47,20 @@ public class PlayerBuffs : MonoBehaviour
         swordFormation.rotateSpeed = originalSpeed;
         Debug.Log("Spin speed normal.");
     }
+
+    IEnumerator SpeedUp(float multiplier, float time)
+    {
+        if (moveScript == null) yield break;
+
+        float originalSpeed = moveScript.moveSpeed;
+
+        moveScript.moveSpeed *= multiplier;
+        Debug.Log(" Speed UUUP!!");
+
+        yield return new WaitForSeconds(time);
+
+        moveScript.moveSpeed = originalSpeed;
+        Debug.Log(" speed normal.");
+    }
+
 }

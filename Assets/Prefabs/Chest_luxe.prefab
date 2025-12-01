@@ -204,6 +204,7 @@ MonoBehaviour:
   - {fileID: 2169854164722551685, guid: d6850b5725f24e54d9864f39f0df2336, type: 3}
   - {fileID: 415632301624817728, guid: 6054a6b3e8a65634a8087c07f6fa1d5d, type: 3}
   - {fileID: 468054754499083420, guid: f44bb878d2d528a4aaaedf2398ab17f7, type: 3}
+  - {fileID: 3446911663705424572, guid: 92e8fd7de82c0d744955a400954846cb, type: 3}
   bladePrefab:
   - {fileID: 1400444030177783596, guid: 0bf1b4faea94b2343afefe6cc4171343, type: 3}
   - {fileID: 5287087597328749211, guid: 5d51ba4fc6484f84cad892076f42bc36, type: 3}

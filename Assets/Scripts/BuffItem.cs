@@ -5,7 +5,6 @@ public class BuffItem : MonoBehaviour
     public enum BuffType
     {
         SpeedUp,
-        AttackUp,
         Shield,
         SpinSpeed
     }
