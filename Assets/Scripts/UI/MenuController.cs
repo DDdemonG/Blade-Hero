@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public static bool autoStartAfterReload = false;
     public GameObject startMenuPanel;
     public GameObject gameMenuPanel;
     public GameObject gameOverPanel;
@@ -24,13 +26,20 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
-        if (startMenuPanel != null) startMenuPanel.SetActive(true);
+        Time.timeScale = 1f;
+        if (autoStartAfterReload)
+        {
+            autoStartAfterReload = false;
+            StartCoroutine(StartGameSequence());
+            return;
+        }
+            if (startMenuPanel != null) startMenuPanel.SetActive(true);
         if (gameMenuPanel != null) gameMenuPanel.SetActive(false);
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
         if (mainAudio != null) mainAudio.enabled = false;
         if (waveManager != null) waveManager.enabled = false;
         if (playerMove != null) playerMove.enabled = false;
-        StartCoroutine(StartGameSequence());
+
     }
 
     public void StartGame()
@@ -138,9 +147,10 @@ public class MenuController : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
-        );
+        autoStartAfterReload = true;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+  
     }
     public void ShowRestart()
     {
